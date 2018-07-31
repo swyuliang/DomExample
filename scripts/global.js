@@ -32,8 +32,9 @@ function addClass(element,value) {
 
 function hightlightPage() {
     if(!document.getElementsByTagName) return false;
-    if(!document.getElementsById) return false;
-    var headers = document.getElementsByName('header');
+    if(!document.getElementById) return false;
+    var headers = document.getElementsByTagName('header');
+    console.log(headers.length);
     if(headers.length == 0) return false;
     var navs = headers[0].getElementsByTagName('nav');
     if(navs.length == 0) return false;
