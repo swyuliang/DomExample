@@ -82,13 +82,13 @@ function moveElement(elementID,final_x,final_y,interval) {
         var dist = Math.ceil((final_y - ypos)/10);
         ypos = ypos + dist;
     }
-    if(xpos > final_x){
+    if(ypos > final_y){
         var dist = Math.ceil((ypos -final_y)/10);
         ypos = ypos - dist;
     }
     elem.style.left = xpos + "px";
     elem.style.top = ypos + "px";
-    var repeat = moveElement('"elementID"',"+final_x+","+final_y+","+interval+");
+    var repeat = "moveElement('"+elementID+"',"+final_x+","+final_y+","+interval+")";
     elem.movement =setTimeout(repeat,interval);
 }
 
@@ -105,7 +105,7 @@ function prepareSlideshow() {
     frame.setAttribute("id","frame");
     slideshow.appendChild(frame);
     var preview = document.createElement("img");
-    preview.setAttribute("src","img/slideshow.gif");
+    preview.setAttribute("src","images/slideshow.gif");
     preview.setAttribute("alt","a glimpse of what awaits you");
     preview.setAttribute("id","preview");
     slideshow.appendChild(preview);
@@ -115,6 +115,7 @@ function prepareSlideshow() {
     for(var i = 0; i<links.length; i++){
         links[i].onmouseover = function () {
             destination = this.getAttribute("href");
+            console.log(destination);
             if(destination.indexOf("index.html") != -1){
                 moveElement("preview",0,0,5);
             }
