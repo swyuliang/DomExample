@@ -100,7 +100,7 @@ article img{
     display: inline;
 }
 
-/*表单样式*/
+/*表格样式*/
 td{
     padding: .5em 3em;
 }
@@ -113,4 +113,12 @@ dt{
 }
 dd{
     float: left;
+}
+
+/*表单样式*/
+label{
+    display: block;
+}
+fieldset{
+    border: 0;
 }
